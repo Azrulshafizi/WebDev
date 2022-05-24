@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<title>Facilites</title>
+<link rel="stylesheet" href="facilities.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <img src="logo.jpeg" height="100px" width="100px"></img>
+  <header>
+  <nav >
+    <ul>
+  <li><a href="#" class="standby">ABOUT US<i class="fa fa-caret-down"></i></a></li>
+  <div class="dropdown">
+  <li><a href="#" class="standby">ROOMS<i class="fa fa-caret-down"></i></a>
+    <div class="dropdown-content">
+    <a href="#">SWIMMING POOL</a>
+    <a href="#">GYM STUDIO</a>
+    <a href="#">SPA & RELAXING</a>
+  </div>
+</li>
+  </div>
+  <div class="dropdown">
+  <li><a href="#" class="current">FACILITY<i class="fa fa-caret-down"></i></a>
+    <div class="dropdown-content">
+      <a href="#" onclick="currentSlide(1)">SWIMMING POOL</a>
+      <a href="#" onclick="currentSlide(2)">GYM STUDIO</a>
+      <a href="#" onclick="currentSlide(3)">SPA & RELAXING</a>
+    </div>
+    <li>
+</div>
+  <li><a href="#" class="standby" >EVENTS<i class="fa fa-caret-down"></i></a></li>
+    <li><a href="#" class="standby" >PROMOTION<i class="fa fa-caret-down"></i></a></li>
+      <li><a href="#" class="standby" >CONTACT US<i class="fa fa-caret-down"></i></a></li>
+</nav>
+</header>
+<img src="background.png" width="100%" height="150px" style="float:left"></img>
+<h1 class="back">FACILITIES</h1>
+
+<div class="slideshow-container">
+
+<div class="mySlides">
+  <img src="swimming.jfif" width="360px"></img>
+  <h3>SWIMMING POOL</h3>
+  <q>contect of swimming pool</q>
+  <p class="author"><a href="form.html">BOOK NOW</a></p>
+</div>
+
+<div class="mySlides">
+  <img src="gym.png" width="400px"></img>
+  <h3>GYM STUDIO</h3>
+  <q>content of gym</q>
+  <br><p class="author">BOOK NOW</p>
+</div>
+
+<div class="mySlides">
+  <img src="spa.jpg" width="400px"></img>
+  <h3>SPA & RELAXING</h3>
+  <q>content of spa</q>
+  <br><p class="author">BOOK NOW</p>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
